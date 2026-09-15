@@ -2,6 +2,12 @@
 
 Versions follow SemVer. Tags are `vX.Y.Z` on this repository.
 
+## v0.1.1 — 2026-09-15
+
+- The manual install now targets `~/.agents/skills/`, the location agents other than
+  Claude Code read, and symlinks it into `~/.claude/skills/`. The previous command only
+  reached Claude Code.
+
 ## v0.1.0 — 2026-09-15
 
 Initial release.

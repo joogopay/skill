@@ -17,14 +17,21 @@ The agent reads `SKILL.md` first and pulls the tables in `references/` on demand
 Without Node, copy the files in by hand:
 
 ```
-DEST=~/.claude/skills/joogopay-integration   # or your agent's skills directory
+DEST=~/.agents/skills/joogopay-integration
 git clone https://github.com/joogopay/skill.git
 mkdir -p "$DEST"
 cp -r skill/SKILL.md skill/references "$DEST"/
 ```
 
-Claude Code reads `~/.claude/skills/`. Other agents use their own directory and name it in
-their documentation; `npx skills add` finds it for you, which is why it is the first option.
+`~/.agents/skills/` is the shared location Codex, Cursor, Gemini CLI, Warp and others read.
+Claude Code reads `~/.claude/skills/`, so symlink it there as well:
+
+```
+mkdir -p ~/.claude/skills
+ln -s "$DEST" ~/.claude/skills/joogopay-integration
+```
+
+`npx skills add` does both for you, which is why it is the first option.
 
 ## Ask your agent
 
