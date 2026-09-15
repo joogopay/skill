@@ -1,0 +1,13 @@
+{
+  "skills": [
+    {
+      "name": "joogopay-integration",
+      "description": "Use when integrating with or reviewing an integration against the merchant open API: creating payments (pay-in) or payouts, querying order or payout status, checking balances and FX rates, fetching payout receipts, calling the unauthenticated checkout endpoints (submit trade number, add extra info), verifying webhooks, debugging 401 signature failures, picking a payment method code for a currency, filling method extra fields, or deciding whether a failed request means the order actually failed. Covers Ed25519 + RFC 9421 request signing with X25519 body encryption, the per-currency method codes and conditional required fields, the status semantics of the checkout endpoints, and the money-safety rules for classifying failures.",
+      "files": [
+        "SKILL.md",
+        "references/methods.md",
+        "references/endpoints.md"
+      ]
+    }
+  ]
+}
