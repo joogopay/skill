@@ -2,6 +2,16 @@
 
 Versions follow SemVer. Tags are `vX.Y.Z` on this repository.
 
+## v0.1.2 — 2026-09-18
+
+- Needs a platform that accepts an omitted or `null` ARS `address` (platform
+  release of 2026-09-18); against an earlier platform, send `address` as a string.
+- Document the optional, nullable ARS `BANK_TRANSFER` payout `address` contract
+  from shared method rules: omission, `null` and empty strings mean no address;
+  non-empty strings are preserved and other value types are invalid.
+- `references/methods.md` gains the USD rows: `CASH_APP` for pay-in, `CASH_APP` /
+  `PAYPAL` / `CHIME` for payouts, each with its required fields.
+
 ## v0.1.1 — 2026-09-15
 
 - The manual install now targets `~/.agents/skills/`, the location agents other than
