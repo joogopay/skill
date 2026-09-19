@@ -44,7 +44,7 @@ are preserved. This does not relax any other required field.
 | `INR` | `IN_IFSC`, `IN_UPI` | `email`, `mobile`, `name`<br>`IN_IFSC` also requires `account`, `ifsc` |
 | `MXN` | (no allowlist) | `accountName`, `accountNo`, `accountType`, `bankCode`, `bankName` |
 | `PEN` | `BANK_TRANSFER`, `E_WALLET` | `accountName`, `accountNo`, `bankCode`, `customerEmail`, `customerPhone`, `documentNumber`, `documentType`<br>`BANK_TRANSFER` also requires `accountType`, `cciNo` |
-| `PHP` | `PH_DF_BANK`, `PH_DF_WALLET` | `accountName`, `accountNo`, `bankCode`, `email`, `mobile` |
+| `PHP` | `PH_DF_BANK`, `PH_DF_WALLET`, `PH_GCASH`, `PH_MAYA` | `accountName`, `accountNo`, `email`, `mobile`<br>`PH_DF_BANK` also requires `bankCode`<br>`PH_DF_WALLET` also requires `bankCode` |
 | `PKR` | `PK_BANK`, `PK_EASYPAISA`, `PK_JAZZCASH` | `accountNo`, `cnic`, `mobile`<br>`PK_BANK` also requires `bankCode` |
 | `TRY` | (no allowlist) | `accountName`, `accountNo`<br>`BANK_TRANSFER` also requires `bankCode`, `bankName` |
 | `USD` | `CASH_APP`, `PAYPAL`, `CHIME` | `name`, `phone`, `email`, `accountNo`, `firstName`, `lastName`, `dateOfBirth`, `countryOfResidence`, `stateOfResidence`, `cardCity`, `cardStreet`, `cardPostCode` |
@@ -109,10 +109,10 @@ alone.
 | `PAYPAL` | `paypal` | payout |
 | `PH_DF_BANK` | `phDfBank` | payout |
 | `PH_DF_WALLET` | `phDfWallet` | payout |
-| `PH_GCASH` | `phGcash` | pay-in |
+| `PH_GCASH` | `phGcash` | pay-in / payout |
 | `PH_GCASH_QR` | `phGcashQr` | pay-in |
 | `PH_GRAB` | `phGrab` | pay-in |
-| `PH_MAYA` | `phMaya` | pay-in |
+| `PH_MAYA` | `phMaya` | pay-in / payout |
 | `PH_MAYA_QR` | `phMayaQr` | pay-in |
 | `PH_NATIVE_GCASH` | `phNativeGcash` | pay-in |
 | `PH_QRIS` | `phQris` | pay-in |

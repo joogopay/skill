@@ -2,6 +2,14 @@
 
 Versions follow SemVer. Tags are `vX.Y.Z` on this repository.
 
+## v0.1.3 — 2026-09-19
+
+- `references/methods.md` reflects the Philippine payout change: `PH_GCASH` and
+  `PH_MAYA` are payout methods as well as pay-in ones and join the `PHP` payout
+  allowlist, and `bankCode` is no longer required for every `PHP` payout — only
+  `PH_DF_BANK` and `PH_DF_WALLET` still require it, since the channel derives the
+  wallet from the named code.
+
 ## v0.1.2 — 2026-09-18
 
 - Needs a platform that accepts an omitted or `null` ARS `address` (platform
