@@ -15,41 +15,37 @@ are preserved. This does not relax any other required field.
 
 | Currency | Method codes | Required fields |
 |---|---|---|
-| `ARS` | (no allowlist) | `documentNumber`, `documentType`, `email`, `firstName`, `lastName`<br>`CVU` also requires `phone`<br>`QRIS` also requires `phone` |
+| `ARS` | `BANK_TRANSFER`, `CVU`, `QRIS` | `documentNumber`, `documentType`, `email`, `firstName`, `lastName`<br>`CVU` also requires `phone`<br>`QRIS` also requires `phone` |
 | `BDT` | `BD_BKASH`, `BD_NAGAD` | `accountName`, `email`, `mobile` |
-| `BRL` | (no allowlist) | (none) |
-| `CLP` | (no allowlist) | `customerEmail`, `customerName`, `documentNumber`, `documentType` |
-| `COP` | (no allowlist) | (none)<br>`BREB` also requires `customerEmail`, `customerName`, `customerPhone`, `documentNumber`, `documentType` |
+| `BRL` | `PIX` | (none) |
+| `CLP` | `KHIPU`, `MACH`, `PAGO46`, `WEBPAY` | `customerEmail`, `customerName`, `documentNumber`, `documentType` |
+| `COP` | `BREB`, `NEQUI`, `PSE` | (none)<br>`BREB` also requires `customerEmail`, `customerName`, `customerPhone`, `documentNumber`, `documentType` |
 | `IDR` | `ID_DANA`, `ID_GOPAY`, `ID_LINKAJA`, `ID_OVO`, `ID_QRIS`, `ID_SHOPEEPAY`, `ID_VA` | `accountName`, `bankCode`, `email`, `mobile` |
 | `INR` | `IN_UPI` | `accountName`, `email`, `mobile` |
-| `MXN` | (no allowlist) | (none) |
+| `MXN` | `CASH`, `OXXO`, `SPEI` | (none) |
 | `PEN` | `BANK_TRANSFER`, `CASH`, `E_WALLET` | `customerEmail`, `customerName`, `customerPhone`, `documentNumber`, `documentType` |
 | `PHP` | `PH_GCASH`, `PH_GCASH_QR`, `PH_GRAB`, `PH_MAYA`, `PH_MAYA_QR`, `PH_NATIVE_GCASH`, `PH_QRIS` | (none) |
 | `PKR` | `PK_EASYPAISA`, `PK_EASYPAISA_QRPH`, `PK_JAZZCASH`, `PK_JAZZCASH_QRPH` | (none) |
-| `TRY` | (no allowlist) | `customerName` |
+| `TRY` | `BANK_TRANSFER` | `customerName` |
 | `USD` | `CASH_APP` | `name`, `phone`, `email`, `ipAddress` |
-| `RUB` | (no built-in rules) | (gateway decides) |
-| `THB` | (no built-in rules) | (gateway decides) |
 
 ## Payout method codes
 
 | Currency | Method codes | Required fields |
 |---|---|---|
-| `ARS` | (no allowlist) | `accountNo`, `accountType`, `documentNumber`, `documentType`, `email`, `firstName`, `lastName`, `phone`<br>`BANK_TRANSFER` optional nullable strings: `address` |
+| `ARS` | `BANK_TRANSFER` | `accountNo`, `accountType`, `documentNumber`, `documentType`, `email`, `firstName`, `lastName`, `phone`<br>`BANK_TRANSFER` optional nullable strings: `address` |
 | `BDT` | `BD_BKASH`, `BD_NAGAD` | `accountName`, `accountNo`, `email`, `mobile` |
-| `BRL` | (no allowlist) | `key`, `keyType` |
-| `CLP` | (no allowlist) | `accountName`, `accountNo`, `accountType`, `bankCode`, `customerEmail`, `customerPhone`, `documentNumber`, `documentType` |
-| `COP` | (no allowlist) | `customerEmail`, `customerName`, `customerPhone`, `documentNumber`, `documentType`<br>`BANK_CARD` also requires `accountNo`, `bankName`<br>`BANK_TRANSFER` also requires `accountNo`, `bankName`<br>`BREB` also requires `accountNo` |
-| `IDR` | (no allowlist) | `accountName`, `bankCode`, `email`, `mobile` |
+| `BRL` | `PIX` | `key`, `keyType` |
+| `CLP` | `BANK_TRANSFER` | `accountName`, `accountNo`, `accountType`, `bankCode`, `customerEmail`, `customerPhone`, `documentNumber`, `documentType` |
+| `COP` | `BANK_CARD`, `BANK_TRANSFER`, `BREB`, `TRANSFIYA` | `customerEmail`, `customerName`, `customerPhone`, `documentNumber`, `documentType`<br>`BANK_CARD` also requires `accountNo`, `bankName`<br>`BANK_TRANSFER` also requires `accountNo`, `bankName`<br>`BREB` also requires `accountNo` |
+| `IDR` | `ID_BANK_TRANSFER`, `ID_DANA`, `ID_GOPAY`, `ID_LINKAJA`, `ID_OVO`, `ID_SHOPEEPAY` | `accountName`, `bankCode`, `email`, `mobile` |
 | `INR` | `IN_IFSC`, `IN_UPI` | `email`, `mobile`, `name`<br>`IN_IFSC` also requires `account`, `ifsc` |
-| `MXN` | (no allowlist) | `accountName`, `accountNo`, `accountType`, `bankCode`, `bankName` |
+| `MXN` | `BANK_TRANSFER` | `accountName`, `accountNo`, `accountType`, `bankCode`, `bankName` |
 | `PEN` | `BANK_TRANSFER`, `E_WALLET` | `accountName`, `accountNo`, `bankCode`, `customerEmail`, `customerPhone`, `documentNumber`, `documentType`<br>`BANK_TRANSFER` also requires `accountType`, `cciNo` |
 | `PHP` | `PH_DF_BANK`, `PH_DF_WALLET`, `PH_GCASH`, `PH_MAYA` | `accountName`, `accountNo`, `email`, `mobile`<br>`PH_DF_BANK` also requires `bankCode`<br>`PH_DF_WALLET` also requires `bankCode` |
 | `PKR` | `PK_BANK`, `PK_EASYPAISA`, `PK_JAZZCASH` | `accountNo`, `cnic`, `mobile`<br>`PK_BANK` also requires `bankCode` |
-| `TRY` | (no allowlist) | `accountName`, `accountNo`<br>`BANK_TRANSFER` also requires `bankCode`, `bankName` |
+| `TRY` | `BANK_TRANSFER`, `PAPARA` | `accountName`, `accountNo`<br>`BANK_TRANSFER` also requires `bankCode`, `bankName` |
 | `USD` | `CASH_APP`, `PAYPAL`, `CHIME` | `name`, `phone`, `email`, `accountNo`, `firstName`, `lastName`, `dateOfBirth`, `countryOfResidence`, `stateOfResidence`, `cardCity`, `cardStreet`, `cardPostCode` |
-| `RUB` | (no built-in rules) | (gateway decides) |
-| `THB` | (no built-in rules) | (gateway decides) |
 
 - **`IDR`**: `ID_BANK_TRANSFER`: `bankCode` is the recipient bank's code and `accountNo` the account number. The five wallet codes `ID_DANA` / `ID_OVO` / `ID_GOPAY` / `ID_LINKAJA` / `ID_SHOPEEPAY`: `bankCode` is the wallet code matching the method (`DANA`, `OVO`, `GOPAY`, `LINKAJA`, `SHOPEEPAY`) and `mobile` is the number registered to the wallet, which receives the funds; `accountNo` is not needed. This wallet rule applies to those five codes only, not to every IDR payout.
 
@@ -75,7 +71,6 @@ alone.
 
 | Method code | Extra field | Used for |
 |---|---|---|
-| `APPLE_PAY` | `applePay` | pay-in |
 | `BANK_CARD` | `bankCard` | payout |
 | `BANK_TRANSFER` | `bankTransfer` | pay-in / payout |
 | `BD_BKASH` | `bdBkash` | pay-in / payout |
@@ -84,10 +79,8 @@ alone.
 | `CASH` | `cash` | pay-in |
 | `CASH_APP` | `cashApp` | pay-in / payout |
 | `CHIME` | `chime` | payout |
-| `CREDIT_CARD` | `creditCard` | pay-in |
 | `CVU` | `cvu` | pay-in |
 | `E_WALLET` | `eWallet` | pay-in / payout |
-| `GOOGLE_PAY` | `googlePay` | pay-in |
 | `ID_BANK_TRANSFER` | `idBankTransfer` | payout |
 | `ID_DANA` | `idDana` | pay-in / payout |
 | `ID_GOPAY` | `idGopay` | pay-in / payout |
@@ -101,10 +94,7 @@ alone.
 | `KHIPU` | `khipu` | pay-in |
 | `MACH` | `mach` | pay-in |
 | `NEQUI` | `nequi` | pay-in |
-| `NETELLER` | `neteller` | pay-in |
-| `P2P` | `p2p` | payout |
 | `PAGO46` | `pago46` | pay-in |
-| `PAGO_FACIL` | `pagoFacil` | pay-in |
 | `PAPARA` | `papara` | payout |
 | `PAYPAL` | `paypal` | payout |
 | `PH_DF_BANK` | `phDfBank` | payout |
@@ -124,21 +114,9 @@ alone.
 | `PK_JAZZCASH_QRPH` | `pkJazzcashQrph` | pay-in |
 | `PSE` | `pse` | pay-in |
 | `QRIS` | `qris` | pay-in |
-| `RAPIPAGO` | `rapipago` | pay-in |
-| `SBP` | `sbp` | payout |
-| `SERVIFACIL` | `serviFacil` | pay-in |
-| `SKRILL` | `skrill` | pay-in |
 | `SPEI` | `spei` | pay-in |
-| `TH_BANK_CARD` | `thBankCard` | pay-in |
-| `TH_BANK_TRANSFER` | `thBankTransfer` | payout |
-| `TH_PROMPTPAY` | `thPromptpay` | pay-in |
-| `TH_TRUEMONEY` | `thTruemoney` | pay-in |
-| `TRANSFIYA` | `transfiya` | pay-in / payout |
-| `USDT-BEP20` | `usdtBep20` | pay-in / payout |
-| `USDT-ERC20` | `usdtErc20` | pay-in / payout |
-| `USDT-TRC20` | `usdtTrc20` | pay-in / payout |
+| `TRANSFIYA` | `transfiya` | payout |
 | `WEBPAY` | `webpay` | pay-in |
 
-The field name **cannot be derived mechanically from the code** (`USDT-TRC20` ->
-`usdtTrc20`, `SERVIFACIL` -> `serviFacil`, `OXXO` has no extra field); this table is
-authoritative. Use the SDK's named fields so a typo fails at compile or type-check time.
+This table is authoritative; do not derive the field name from the code. Use the SDK's
+named fields so a typo fails at compile or type-check time.

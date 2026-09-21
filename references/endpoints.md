@@ -41,8 +41,13 @@ order is still processing. Do not treat a non-final status as failure.
 
 ## Currencies
 
-`BRL` / `ARS` / `MXN` / `COP` / `CLP` / `PEN` / `TRY` / `RUB` / `USD` / `BDT` / `IDR` / `PHP` / `PKR` / `THB` / `INR`
+`BRL` / `ARS` / `MXN` / `COP` / `CLP` / `PEN` / `TRY` / `USD` / `BDT` / `IDR` / `PHP` / `PKR` / `INR`
 
 ## Countries
 
-`BR` / `AR` / `MX` / `CO` / `CL` / `PE` / `TR` / `RU` / `US` / `BD` / `ID` / `PH` / `PK` / `TH` / `IN`
+`BR` / `AR` / `MX` / `CO` / `CL` / `PE` / `TR` / `US` / `BD` / `ID` / `PH` / `PK` / `IN`
+
+An order can only be created in these currencies; the gateway refuses any other. The
+country is derived from the currency and returned on the order; it is not checked on
+the way in. `GetBalance` and `GetUSDRate` accept any currency and are not limited to
+this list.

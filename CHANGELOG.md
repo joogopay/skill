@@ -2,6 +2,22 @@
 
 Versions follow SemVer. Tags are `vX.Y.Z` on this repository.
 
+## v0.1.4 — 2026-09-21
+
+- The reference tables no longer advertise what the gateway refuses: the currencies
+  `RUB` and `THB`, the countries `RU` and `TH`, and the method codes no currency
+  accepts (`APPLE_PAY`, `CREDIT_CARD`, `GOOGLE_PAY`, `NETELLER`, `P2P`, `PAGO_FACIL`,
+  `RAPIPAGO`, `SBP`, `SERVIFACIL`, `SKRILL`, `TH_BANK_CARD`, `TH_BANK_TRANSFER`,
+  `TH_PROMPTPAY`, `TH_TRUEMONEY` and the three `USDT-*` codes).
+- `endpoints.md` says the currency list bounds order creation and that the country is
+  derived from it, not checked on the way in; `GetBalance` and `GetUSDRate` take any
+  currency.
+
+- `references/methods.md` lists the method-code allowlist for every currency and
+  direction the gateway validates (`ARS`, `BRL`, `CLP`, `COP`, `MXN`, `TRY`, and
+  `IDR` payouts were previously open). `OXXO` is marked as a pay-in method and
+  `TRANSFIYA` as payout only, matching the gateway.
+
 ## v0.1.3 — 2026-09-19
 
 - `references/methods.md` reflects the Philippine payout change: `PH_GCASH` and
