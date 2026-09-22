@@ -2,6 +2,14 @@
 
 Versions follow SemVer. Tags are `vX.Y.Z` on this repository.
 
+## v0.1.5 — 2026-09-22
+
+- `references/methods.md`: `IDR` payouts require `accountNo` for every method, wallets
+  included (`ID_DANA`, `ID_OVO`, `ID_GOPAY`, `ID_LINKAJA`, `ID_SHOPEEPAY`), matching the
+  gateway. The `BDT`, `IDR`, `PHP` and `PKR` notes now say the recipient account is taken
+  from `accountNo` — the phone number registered to the wallet for a wallet method — and
+  that `mobile` is the recipient contact number, which never stands in for `accountNo`.
+
 ## v0.1.4 — 2026-09-21
 
 - The reference tables no longer advertise what the gateway refuses: the currencies

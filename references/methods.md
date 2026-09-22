@@ -38,7 +38,7 @@ are preserved. This does not relax any other required field.
 | `BRL` | `PIX` | `key`, `keyType` |
 | `CLP` | `BANK_TRANSFER` | `accountName`, `accountNo`, `accountType`, `bankCode`, `customerEmail`, `customerPhone`, `documentNumber`, `documentType` |
 | `COP` | `BANK_CARD`, `BANK_TRANSFER`, `BREB`, `TRANSFIYA` | `customerEmail`, `customerName`, `customerPhone`, `documentNumber`, `documentType`<br>`BANK_CARD` also requires `accountNo`, `bankName`<br>`BANK_TRANSFER` also requires `accountNo`, `bankName`<br>`BREB` also requires `accountNo` |
-| `IDR` | `ID_BANK_TRANSFER`, `ID_DANA`, `ID_GOPAY`, `ID_LINKAJA`, `ID_OVO`, `ID_SHOPEEPAY` | `accountName`, `bankCode`, `email`, `mobile` |
+| `IDR` | `ID_BANK_TRANSFER`, `ID_DANA`, `ID_GOPAY`, `ID_LINKAJA`, `ID_OVO`, `ID_SHOPEEPAY` | `accountName`, `accountNo`, `bankCode`, `email`, `mobile` |
 | `INR` | `IN_IFSC`, `IN_UPI` | `email`, `mobile`, `name`<br>`IN_IFSC` also requires `account`, `ifsc` |
 | `MXN` | `BANK_TRANSFER` | `accountName`, `accountNo`, `accountType`, `bankCode`, `bankName` |
 | `PEN` | `BANK_TRANSFER`, `E_WALLET` | `accountName`, `accountNo`, `bankCode`, `customerEmail`, `customerPhone`, `documentNumber`, `documentType`<br>`BANK_TRANSFER` also requires `accountType`, `cciNo` |
@@ -47,7 +47,10 @@ are preserved. This does not relax any other required field.
 | `TRY` | `BANK_TRANSFER`, `PAPARA` | `accountName`, `accountNo`<br>`BANK_TRANSFER` also requires `bankCode`, `bankName` |
 | `USD` | `CASH_APP`, `PAYPAL`, `CHIME` | `name`, `phone`, `email`, `accountNo`, `firstName`, `lastName`, `dateOfBirth`, `countryOfResidence`, `stateOfResidence`, `cardCity`, `cardStreet`, `cardPostCode` |
 
-- **`IDR`**: `ID_BANK_TRANSFER`: `bankCode` is the recipient bank's code and `accountNo` the account number. The five wallet codes `ID_DANA` / `ID_OVO` / `ID_GOPAY` / `ID_LINKAJA` / `ID_SHOPEEPAY`: `bankCode` is the wallet code matching the method (`DANA`, `OVO`, `GOPAY`, `LINKAJA`, `SHOPEEPAY`) and `mobile` is the number registered to the wallet, which receives the funds; `accountNo` is not needed. This wallet rule applies to those five codes only, not to every IDR payout.
+- **`BDT`**: `accountNo` is the wallet-registered phone number and receives the funds; `mobile` is the recipient contact number and never stands in for `accountNo`.
+- **`IDR`**: `ID_BANK_TRANSFER`: `bankCode` is the recipient bank's code and `accountNo` the account number. The five wallet codes `ID_DANA` / `ID_OVO` / `ID_GOPAY` / `ID_LINKAJA` / `ID_SHOPEEPAY`: `bankCode` is the wallet code matching the method (`DANA`, `OVO`, `GOPAY`, `LINKAJA`, `SHOPEEPAY`) and `accountNo` is the phone number registered to the wallet, which receives the funds. In every case `mobile` is the recipient contact number and never stands in for `accountNo`; if the two differ, the payout still goes to `accountNo`.
+- **`PHP`**: `accountNo` receives the funds: the wallet-registered phone number for `PH_GCASH` / `PH_MAYA` / `PH_DF_WALLET`, the bank account number for `PH_DF_BANK`. `mobile` is the recipient contact number and never stands in for `accountNo`.
+- **`PKR`**: `accountNo` receives the funds: the wallet-registered phone number for `PK_JAZZCASH` / `PK_EASYPAISA`, the bank account number for `PK_BANK`. `mobile` is the recipient contact number and never stands in for `accountNo`.
 
 **Required fields are conditional.** Within one currency, different method codes require
 different fields; see "also requires" in the tables. For example `INR` payouts always need
