@@ -2,6 +2,11 @@
 
 Versions follow SemVer. Tags are `vX.Y.Z` on this repository.
 
+## v0.1.6 — 2026-09-25
+
+- Document payout-only `REFUNDED` query and webhook results, including `refundNo`,
+  `refundAmount`, and `refundTime`, with refund idempotency and late-success handling.
+
 ## v0.1.5 — 2026-09-22
 
 - `references/methods.md`: `IDR` payouts require `accountNo` for every method, wallets

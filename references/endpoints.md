@@ -34,10 +34,14 @@ order; neither is the HTTP code. See "Key rules" in SKILL.md.
 
 ## Order statuses
 
-`PENDING` / `PROCESSING` / `SUCCEEDED` / `FAILED` / `EXPIRED` / `CANCELED`
+`PENDING` / `PROCESSING` / `SUCCEEDED` / `FAILED` / `EXPIRED` / `CANCELED` / `REFUNDED`
 
-Only `SUCCEEDED` / `FAILED` / `EXPIRED` / `CANCELED` are final; everything else means the
-order is still processing. Do not treat a non-final status as failure.
+`PENDING` / `PROCESSING` are in progress. `SUCCEEDED` / `FAILED` / `EXPIRED` /
+`CANCELED` are payment results. Payouts can additionally become `REFUNDED` after
+an upstream return is credited; query and webhook then include `refundNo`,
+`refundAmount` (full principal, decimal string), and `refundTime` (Unix milliseconds).
+Apply the refund once and never overwrite it with a late success event. `REFUNDED`
+does not apply to payment or checkout results. Do not treat a non-final status as failure.
 
 ## Currencies
 
