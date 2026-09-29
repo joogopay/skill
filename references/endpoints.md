@@ -9,6 +9,7 @@
 | `CreatePayment` | `POST /api/v1/payments` | yes | yes |
 | `QueryPaymentByOrderNo` | `GET /api/v1/payments?orderNo=...` | yes | - |
 | `QueryPaymentByMerchantOrderNo` | `GET /api/v1/payments?merchantOrderNo=...` | yes | - |
+| `SupplementPayment` | `POST /api/v1/payments/trade-no` | yes | yes |
 | `CreatePayout` | `POST /api/v1/payouts` | yes | yes |
 | `QueryPayoutByOrderNo` | `GET /api/v1/payouts?orderNo=...` | yes | - |
 | `QueryPayoutByMerchantOrderNo` | `GET /api/v1/payouts?merchantOrderNo=...` | yes | - |

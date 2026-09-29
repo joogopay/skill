@@ -2,6 +2,12 @@
 
 Versions follow SemVer. Tags are `vX.Y.Z` on this repository.
 
+## v0.1.7 — 2026-09-29
+
+- `references/endpoints.md`: add `SupplementPayment` (`POST /api/v1/payments/trade-no`),
+  the signed merchant-side call that submits the payer's transfer reference for a pay-in
+  still `PROCESSING`. Signed and body-encrypted like `CreatePayment`.
+
 ## v0.1.6 — 2026-09-25
 
 - Document payout-only `REFUNDED` query and webhook results, including `refundNo`,
