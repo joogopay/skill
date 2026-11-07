@@ -66,6 +66,10 @@ extra that is present must be the one for `code`) still run. Do not read this as
 "unsupported" or "no required fields": the gateway may still require fields it validates
 itself.
 
+## Aggregate hosted checkout
+
+For an enabled merchant and currency, create a payment with `paymentMethod: {"code":"ALL"}` and no extra payload. The payer selects a method at the complete `action.url`; retain its fragment and treat the link as private. `ALL` is payment-only and bypasses method-specific payer fields, not the common order validation. Confirm funds through signed webhooks or authenticated queries. Retry uncertain creates with the same merchant order number and unchanged business fields.
+
 ## Which field holds extra
 
 Each method code maps to one **named field** inside `paymentMethod` / `payoutMethod`; it

@@ -2,6 +2,11 @@
 
 Versions follow SemVer. Tags are `vX.Y.Z` on this repository.
 
+## v0.2.0 — 2026-11-07
+
+- Document aggregate hosted checkout.
+- Match verified webhooks to the platform order under the expected merchant before applying balance changes.
+
 ## v0.1.7 — 2026-09-29
 
 - `references/endpoints.md`: add `SupplementPayment` (`POST /api/v1/payments/trade-no`),

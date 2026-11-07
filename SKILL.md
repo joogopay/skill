@@ -77,7 +77,11 @@ nothing. Build a second one only for a different set of merchant credentials.
 - **Every webhook delivery is signed afresh.** Verify it with the SDK's `VerifyWebhook` /
   `ParsePaymentWebhook` / `ParsePayoutWebhook`, return 2xx on success, otherwise the
   platform retries. Deduplicate deliveries by `eventId` and make order-state updates
-  idempotent by `orderNo` or `merchantOrderNo`.
+  idempotent by the verified platform `orderNo`. Match it to the saved order under
+  the expected merchant and check business fields before applying the event. For an
+  unknown platform order, query by `orderNo` using your own credentials before any
+  balance change; reliably queue unresolved events. Do not match by merchant order
+  number or callback URL alone.
 
 ## Money safety
 
